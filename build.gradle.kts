@@ -22,10 +22,17 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.26")
 }
 
+java {
+    withSourcesJar()
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            from(components["java"])
+            artifact(tasks["jar"]) {
+                classifier = ""
+            }
+            artifact(tasks["sourcesJar"])
         }
     }
 }
