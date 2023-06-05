@@ -6,6 +6,8 @@ import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 @Getter
@@ -14,7 +16,8 @@ import java.util.UUID;
 public class PlayerProfile {
     private String id;
     private String name;
-    @Nullable private Long lastUpdated;
+    private Long lastUpdated = System.currentTimeMillis();
+    private Map<String, Integer> actionBarComponentPositions = new HashMap<>();
     @Nullable private Integer test;
 
     /**
