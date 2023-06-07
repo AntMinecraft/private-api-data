@@ -18,6 +18,7 @@ public class PlayerProfile {
     private String name;
     private Long lastUpdated = System.currentTimeMillis();
     private Map<String, Integer> actionBarComponentPositions = new HashMap<>();
+    private SoldiersProfile soldiersProfile = new SoldiersProfile();
     @Nullable private Integer test;
 
     /**
